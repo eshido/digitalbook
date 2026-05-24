@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ақпараттық-коммуникациялық технологиялар — Цифрлық кітап</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h1 class="sidebar-title">АКТ</h1>
+            <p class="sidebar-subtitle">Цифрлық кітап</p>
+            <button class="sidebar-toggle" id="sidebarToggle" title="Жабу">✕</button>
+        </div>
+        <nav class="sidebar-nav" id="sidebarNav">
+            <!-- Populated by JS -->
+        </nav>
+    </aside>
+
+    <main class="main" id="main">
+        <header class="topbar">
+            <button class="menu-btn" id="menuBtn" title="Мәзір">☰</button>
+            <div class="topbar-search">
+                <input type="text" id="searchInput" placeholder="Іздеу..." class="search-input">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+            <div class="topbar-actions">
+                <button id="fontUp" class="icon-btn" title="Қаріпті үлкейту">A⁺</button>
+                <button id="fontDown" class="icon-btn" title="Қаріпті кішірейту">A⁻</button>
+                <button id="themeToggle" class="icon-btn" title="Тақырыпты ауыстыру">🌓</button>
+            </div>
+        </header>
+
+        <div class="content-area" id="contentArea">
+            <div class="welcome-screen" id="welcomeScreen">
+                <div class="welcome-content">
+                    <h2>Ақпараттық-коммуникациялық технологиялар</h2>
+                    <p class="welcome-subtitle">Пәннің оқу-әдістемелік кешені</p>
+                    <p class="welcome-institution">М.Дулатов атындағы Қостанай инженерлік-экономикалық университеті</p>
+                    <p class="welcome-department">Ақпараттық технологиялар және автоматика кафедрасы</p>
+                    <div class="welcome-stats" id="welcomeStats">
+                        <!-- Populated by JS -->
+                    </div>
+                    <p class="welcome-hint">Мазмұнды көру үшін сол жақтағы мәзірден тақырыпты таңдаңыз</p>
+                </div>
+            </div>
+
+            <div class="content-view" id="contentView" style="display:none;">
+                <div class="content-header" id="contentHeader">
+                    <div class="breadcrumbs" id="breadcrumbs"></div>
+                    <h2 class="content-title" id="contentTitle"></h2>
+                </div>
+                <div class="content-body" id="contentBody">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="content-footer" id="contentFooter">
+                    <!-- Navigation between sections -->
+                </div>
+            </div>
+
+            <div class="test-view" id="testView" style="display:none;">
+                <!-- Test/quiz interface -->
+            </div>
+        </div>
+    </main>
+
+    <div class="search-overlay" id="searchOverlay" style="display:none;">
+        <div class="search-overlay-content">
+            <div class="search-overlay-header">
+                <input type="text" id="overlaySearchInput" placeholder="Кітап бойынша іздеу..." class="search-overlay-input">
+                <button id="closeSearch" class="icon-btn">✕</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="js/test-engine.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

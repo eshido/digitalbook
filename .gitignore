@@ -1,0 +1,24 @@
+# System files
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+
+# Python venv
+venv/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node (if any)
+node_modules/
+
+# Temp files
+*:Zone.Identifier
+
+# Source docx (large, not needed for runtime)
+новый материал.docx
