@@ -1,0 +1,54 @@
+{
+  "name": "akt-digital-book",
+  "version": "1.0.0",
+  "description": "АКТ цифрлық кітабы — Ақпараттық-коммуникациялық технологиялар бойынша электронды оқулық",
+  "main": "main.js",
+  "author": "М.Дулатов атындағы Қостанай инженерлік-экономикалық университеті",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "set CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder",
+    "dist:all": "set CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder --linux --windows --mac"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "kz.kineu.akt-digital-book",
+    "productName": "АКТ Цифрлық кітап",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "app/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": null
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "language": "1049"
+    },
+    "linux": {
+      "target": ["AppImage"],
+      "category": "Education"
+    },
+    "mac": {
+      "target": ["dmg"]
+    }
+  }
+}

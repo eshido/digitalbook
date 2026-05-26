@@ -42,6 +42,16 @@
     // === Load Content ===
     async function loadContent() {
         try {
+            // Electron: use preloaded content from disk
+            if (window.electronAPI && window.electronAPI.getContent) {
+                contentData = window.electronAPI.getContent();
+                if (contentData) {
+                    buildNavigation();
+                    updateWelcomeStats();
+                    return;
+                }
+            }
+            // Browser: fetch over HTTP
             const resp = await fetch('content.json');
             contentData = await resp.json();
             buildNavigation();
@@ -651,6 +661,14 @@
 
     // === Expose globally ===
     window._showWelcome = showWelcome;
+
+    // === Electron IPC: menu actions ===
+    if (window.electronAPI && window.electronAPI.onAction) {
+        window.electronAPI.onAction((action, payload) => {
+            if (action === 'action:font') changeFont(payload);
+            if (action === 'action:toggle-theme') toggleTheme();
+        });
+    }
 
     // === Init ===
     applyTheme();
